@@ -49,12 +49,21 @@ public class Main {
             switch(i + 1)
             {
                 case 1:
+                case 21:
+                case 31:
+                case 41:
                     j = "st";
                     break;
                 case 2:
+                case 22:
+                case 32:
+                case 42:
                     j = "nd";
                     break;
                 case 3:
+                case 23:
+                case 33:
+                case 43:
                     j = "rd";
                     break;
                 default:
