@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 
 class WordFrequency {
     private String text;
-    private Map<String, Integer> wordCount = new HashMap<>();
+    private HashMap<String, Integer> wordCount = new HashMap<>();
     WordFrequency(String text) {
         this.text = text;
         cleanText();
@@ -32,21 +32,25 @@ class WordFrequency {
     }
 
     public void printTo50Words() {
-
+        Map<String, Integer> tempMap = sortByValue(wordCount);
+        for (Entry<String, Integer> entry : tempMap.entrySet()) {
+            System.out.println("Word: " + entry.getKey() + " | " + "Value: " + entry.getValue());
+        }
     }
 
     public HashMap<String, Integer> sortByValue(HashMap<String, Integer> wordMap) {
 
-        List<Map.Entry<String, Integer>> list = new LinkedList<>();
+        List<Map.Entry<String, Integer>> list = new LinkedList<>(wordMap.entrySet());
 
-        Collections.sort(list, new Comparator<Entry<String, Integer>>() {
-            @Override
-            public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-                return o1.getValue().compareTo(o2.getValue());
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer> >() {
+            public int compare(Map.Entry<String, Integer> o1,
+                               Map.Entry<String, Integer> o2)
+            {
+                return (o2.getValue()).compareTo(o1.getValue());
             }
         });
 
-        HashMap<String, Integer> sortedMap = new HashMap<>();
+        HashMap<String, Integer> sortedMap = new LinkedHashMap<>();
 
         for (Map.Entry<String, Integer> entry : list) {
             sortedMap.put(entry.getKey(), entry.getValue());
