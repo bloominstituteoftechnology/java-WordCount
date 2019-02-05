@@ -22,7 +22,9 @@ public class Main {
         String line = reader.readLine();
         while(line != null) {
             if(!line.trim().equals("")) {
+
                 String [] words = line.split(" ");
+
                 for(String word: words)
                 {
                     if(word == null || word.trim().equals("")){
@@ -31,7 +33,7 @@ public class Main {
                     String processed = word.toLowerCase();
                     if(frequency.containsKey(processed)) {
                         frequency.put(
-                                processed,
+                                processed.replaceAll("[[\\.\\?\\!\\,\\;\\:\\{\\}\\(\\)\\']]", ""),
                                 frequency.get(processed) + 1
                         );
                     } else {
@@ -42,8 +44,6 @@ public class Main {
             line = reader.readLine();
         }
         System.out.println(frequency);
-
-
         int removeCounter = 1;
         while(removeCounter < 51)
         {
@@ -59,7 +59,6 @@ public class Main {
                 }
             }
             System.out.println("(" + removeCounter + ") The most frequent word is: '" + theWord + "' appears: " + mostFrequent);
-
             frequency.remove(theWord);
             removeCounter++;
         }
