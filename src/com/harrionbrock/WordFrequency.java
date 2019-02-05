@@ -1,11 +1,15 @@
 package com.harrionbrock;
 
-public class WordFrequency {
-    private String text;
+import java.util.HashMap;
+import java.util.Map;
 
-    public WordFrequency(String text) {
+class WordFrequency {
+    private String text;
+    private Map<String, Integer> wordCount = new HashMap<>();
+    WordFrequency(String text) {
         this.text = text;
         cleanText();
+        addWordsToMap();
     }
 
     private void cleanText() {
@@ -13,7 +17,14 @@ public class WordFrequency {
 //        return this.text;
     }
 
-    public String getCleanInput() {
+    private void addWordsToMap() {
+        String[] words = this.text.split(" +");
+        for (String word : words) {
+            wordCount.compute(word, (k, v) -> v == null ? 1 : v + 1);
+        }
+    }
+
+    String getCleanInput() {
         return this.text;
     }
 }
