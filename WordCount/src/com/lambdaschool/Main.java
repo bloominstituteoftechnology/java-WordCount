@@ -1,6 +1,6 @@
 package com.lambdaschool;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class Main {
 
@@ -31,5 +31,21 @@ public class Main {
             System.out.println("key: " + i + " value: " + wordCount.get(i));
         }
 
+        ArrayList<HashMap.Entry<String, Integer>> sortedWordCount = new ArrayList<HashMap.Entry<String, Integer>>();
+        sortedWordCount.addAll(wordCount.entrySet());
+
+        Collections.sort(sortedWordCount, new Comparator<HashMap.Entry<String, Integer>>()
+        {
+          public int compare(HashMap.Entry<String, Integer> w1, HashMap.Entry<String, Integer> w2)
+          {
+              return w2.getValue() - w1.getValue();
+          }
+        });
+
+        System.out.println("\n***\n");
+        for (int i = 0; i < 50; i++)
+        {
+            System.out.println(sortedWordCount.get(i));
+        }
     }
 }
