@@ -21,7 +21,6 @@ public class Main
     {
         // Read in the string
         String data = readFileAsString("./HumanRights.txt");
-        // System.out.println(data);
         // Make lower case
         data = data.toLowerCase();
         // Remove punctuation
@@ -29,8 +28,6 @@ public class Main
         // Split on space
         String[] words = data.split(" +");
         // Instantiate Hash Map
-        System.out.println("Array length: " + words.length);
-        // System.out.println("Words: " + words[0]);
         HashMap<String, Integer> wordsHashMap = new HashMap<String, Integer>();
         // Iterate over string making hash map
         for (int i = 0; i < words.length; i++)
@@ -49,15 +46,13 @@ public class Main
         ArrayList<String> topFifty = new ArrayList<String>();
         for (int i = 0; i < 50; i++)
         {
-            // for (String key : wordsHashMap.keySet())
             for (Map.Entry<String, Integer> entry : wordsHashMap.entrySet())
             {
                 int largestCount = 0;
                 String largestWord = "";
                 String currentWord = entry.getKey();
-                System.out.println(currentWord);
                 int currentCount = entry.getValue();
-                if (currentCount > largestCount)
+                if ((currentCount > largestCount) && (!topFifty.contains(currentWord)))
                 {
                     largestCount = currentCount;
                     largestWord = currentWord;
@@ -65,11 +60,8 @@ public class Main
                 // --> Add the word to top 50
                 topFifty.add(currentWord);
                 // --> Remove word from hash map
-                wordsHashMap.remove(currentWord);
             }
-
         }
-        // print words
         for (int i = 0; i < 50; i++)
         {
             System.out.println(topFifty.get(i));
