@@ -1,9 +1,7 @@
 package com.harrionbrock;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 class WordFrequency {
     private String text;
@@ -31,6 +29,29 @@ class WordFrequency {
         for (Entry entry : hastSet) {
             System.out.println("Word: " + entry.getKey() + " | " + "Count: " + entry.getValue());
         }
+    }
+
+    public void printTo50Words() {
+
+    }
+
+    public HashMap<String, Integer> sortByValue(HashMap<String, Integer> wordMap) {
+
+        List<Map.Entry<String, Integer>> list = new LinkedList<>();
+
+        Collections.sort(list, new Comparator<Entry<String, Integer>>() {
+            @Override
+            public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+        });
+
+        HashMap<String, Integer> sortedMap = new HashMap<>();
+
+        for (Map.Entry<String, Integer> entry : list) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+        return sortedMap;
     }
 
     String getCleanInput() {
