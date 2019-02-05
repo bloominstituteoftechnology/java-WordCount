@@ -27,14 +27,22 @@ class WordFrequency {
     public void printAllWordCount() {
         Set<Entry<String, Integer>>  hastSet = wordCount.entrySet();
         for (Entry entry : hastSet) {
-            System.out.println("Word: " + entry.getKey() + " | " + "Count: " + entry.getValue());
+
         }
     }
 
     public void printTo50Words() {
         Map<String, Integer> tempMap = sortByValue(wordCount);
+        int index = 0;
+
         for (Entry<String, Integer> entry : tempMap.entrySet()) {
-            System.out.println("Word: " + entry.getKey() + " | " + "Value: " + entry.getValue());
+            if (index < 50) {
+                System.out.println("Word: " + entry.getKey() + " | " + "Count: " + entry.getValue());
+            }
+            else {
+                break;
+            }
+            index++;
         }
     }
 
