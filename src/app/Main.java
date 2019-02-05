@@ -39,20 +39,12 @@ public class Main
             }
         });
 
-        if (sorted.size() < 50)
+        int i = 0;
+        for(HashMap.Entry<String, Integer> word: sorted)
         {
-            for(HashMap.Entry<String, Integer> word: sorted)
-            {
-                System.out.println("Word: " + word.getKey() + " Count: " + word.getValue());
-            }
-        } else
-        {
-            for(int i = 0; i < 50; i++)
-            {
-                HashMap.Entry<String, Integer> word = sorted.get(i);
-                System.out.println("Word: " + word.getKey() + " Count: " + word.getValue());
-            }
+            if (i > 49) break;
+            System.out.println("Word: " + word.getKey() + " Count: " + word.getValue());
+            i++;
         }
-
     }
 }
