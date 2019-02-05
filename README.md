@@ -31,3 +31,10 @@ Remember that HashMaps are not sorted not easily sortable. You could convert
 the HashMap to an array list and then sort the array list. Alternatively, 
 you can find the most common word, print it, remove it, 
 and repeat the process. 
+
+Note:
+
+Below are two snippets of code you might find useful for this afternoon. Of course if you do not find them useful please ignore. You are NOT required to use this code.
+
+`myStr.replaceAll("[[\\.\\?\\!\\,\\;\\:\\{\\}\\(\\)\\']]", "");`
+`String[] words = myStr.split(" +");`
