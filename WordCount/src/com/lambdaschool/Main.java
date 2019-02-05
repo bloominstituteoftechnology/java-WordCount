@@ -10,9 +10,9 @@ public class Main {
         String words = declaration.replaceAll("[[\\.\\?\\!\\,\\;\\:\\{\\}\\(\\)\\']]", "").toLowerCase();
 
         String[] splitWords = words.split(" ");
-        for (int i = 0; i < splitWords.length - 1; i++) {
-            System.out.println(splitWords[i]);
-        }
+//        for (int i = 0; i < splitWords.length - 1; i++) {
+//            System.out.println(splitWords[i]);
+//        }
 
         HashMap<String, Integer> wordCount = new HashMap<String, Integer>();
         for (String word : splitWords)
@@ -26,10 +26,10 @@ public class Main {
             }
         }
 
-        for (String i : wordCount.keySet())
-        {
-            System.out.println("key: " + i + " value: " + wordCount.get(i));
-        }
+//        for (String i : wordCount.keySet())
+//        {
+//            System.out.println("key: " + i + " value: " + wordCount.get(i));
+//        }
 
         ArrayList<HashMap.Entry<String, Integer>> sortedWordCount = new ArrayList<HashMap.Entry<String, Integer>>();
         sortedWordCount.addAll(wordCount.entrySet());
@@ -45,7 +45,24 @@ public class Main {
         System.out.println("\n***\n");
         for (int i = 0; i < 50; i++)
         {
-            System.out.println(sortedWordCount.get(i));
+            String j = "";
+            switch(i + 1)
+            {
+                case 1:
+                    j = "st";
+                    break;
+                case 2:
+                    j = "nd";
+                    break;
+                case 3:
+                    j = "rd";
+                    break;
+                default:
+                    j = "th";
+                    break;
+            }
+
+            System.out.println("The " + (i + 1) + j + " most frequent word is '" + sortedWordCount.get(i).getKey() + "' with " + sortedWordCount.get(i).getValue() + " occurrences.");
         }
     }
 }
