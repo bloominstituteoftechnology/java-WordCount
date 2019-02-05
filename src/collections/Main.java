@@ -1,6 +1,6 @@
 package collections;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class Main
 {
@@ -15,7 +15,6 @@ public class Main
         for (String word : wordStrings
         )
         {
-            System.out.println(word);
             if (!frequencyMap.containsKey(word))
             {
                 frequencyMap.put(word, 1);
@@ -25,6 +24,22 @@ public class Main
             }
 
 
+        }
+
+
+        ArrayList<HashMap.Entry<String, Integer>> sortedMap = new ArrayList <HashMap.Entry<String, Integer>>(frequencyMap.entrySet());
+
+        Collections.sort(sortedMap, new Comparator<HashMap.Entry<String, Integer>>()
+                {
+                    public int compare(HashMap.Entry<String, Integer> o1, HashMap.Entry<String, Integer> o2)
+                    {
+                        return o2.getValue() - o1.getValue();
+                    }
+                }
+        );
+        for (int i = 0; i < 50; i++)
+        {
+            System.out.println("The word " + sortedMap.get(i).getKey() + " was used " + sortedMap.get(i).getValue() + " times.");
         }
 
 
