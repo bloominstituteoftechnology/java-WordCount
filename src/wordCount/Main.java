@@ -10,7 +10,6 @@ public class Main {
 
         UNHRDec.replaceAll("[[\\.\\?\\!\\,\\;\\:\\{\\}\\(\\)\\']]", "");
         String[] words = UNHRDec.split(" +");
-        System.out.println(words[1]);
         HashMap<String, Integer> wordCount = new HashMap<String, Integer>();
         for (String word : words) {
             if (wordCount.containsKey(word)) {
@@ -29,10 +28,10 @@ public class Main {
             }
         });
 
-        int count = 0;
+        int count = 1;
         for (HashMap.Entry<String, Integer> wc : sortedWordCount) {
-            if (count < 50) {
-                System.out.println("The word \"" + wc.getKey() + "\" occurs " + wc.getValue() + " times");
+            if (count <= 50) {
+                System.out.println(count + ") The word \"" + wc.getKey() + "\" occurs " + wc.getValue() + " times.");
                 count++;
             }
 
