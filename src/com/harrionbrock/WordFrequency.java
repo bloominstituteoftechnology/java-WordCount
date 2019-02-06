@@ -6,6 +6,7 @@ import java.util.Map.Entry;
 class WordFrequency {
     private String text;
     private HashMap<String, Integer> wordCount = new HashMap<>();
+
     WordFrequency(String text) {
         this.text = text;
         cleanText();
@@ -31,10 +32,10 @@ class WordFrequency {
     }
 
     public void printTo50Words() {
-        Map<String, Integer> tempMap = sortByValue(wordCount);
+        List<Entry<String, Integer>> tempMap = sortByValue(wordCount);
         int index = 0;
 
-        for (Entry<String, Integer> entry : tempMap.entrySet()) {
+        for (Entry<String, Integer> entry : tempMap) {
             if (index < 50) {
                 System.out.println("Word: " + entry.getKey() + " | " + "Count: " + entry.getValue());
             }
@@ -45,7 +46,7 @@ class WordFrequency {
         }
     }
 
-    public HashMap<String, Integer> sortByValue(HashMap<String, Integer> wordMap) {
+    public List<Entry<String, Integer>> sortByValue(HashMap<String, Integer> wordMap) {
 
         List<Map.Entry<String, Integer>> list = new LinkedList<>(wordMap.entrySet());
 
@@ -57,12 +58,12 @@ class WordFrequency {
             }
         });
 
-        HashMap<String, Integer> sortedMap = new LinkedHashMap<>();
-
-        for (Map.Entry<String, Integer> entry : list) {
-            sortedMap.put(entry.getKey(), entry.getValue());
-        }
-        return sortedMap;
+//        HashMap<String, Integer> sortedMap = new LinkedHashMap<>();
+//
+//        for (Map.Entry<String, Integer> entry : list) {
+//            sortedMap.put(entry.getKey(), entry.getValue());
+//        }
+        return list;
     }
 
     String getCleanInput() {

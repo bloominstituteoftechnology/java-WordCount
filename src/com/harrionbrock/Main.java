@@ -8,7 +8,7 @@ public class Main {
         WordFrequency wordFrequency = new WordFrequency(input);
         wordFrequency.printTo50Words();
 
-        System.out.println("Print All");
+//        System.out.println("Print All");
 //        wordFrequency.printAllWordCount();
     }
 }
