@@ -1,7 +1,6 @@
 package com.lambdaschool;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
 
@@ -16,13 +15,19 @@ public class Main {
 //            System.out.println(s);
 //        }
 
-        Map<String, Integer> wordsMap = new HashMap<>();
+        HashMap<String, Integer> mapWords = new HashMap<>();
 
-        for (String word : splitWords) {
-            if (wordsMap.containsKey(word)) {
-
+        for (String word : arrayWords) {
+            if (mapWords.containsKey(word)) {
+                int counter = mapWords.get(word);
+                mapWords.put(word, counter++);
+            } else {
+                mapWords.put(word, 1);
             }
         }
+
+        // HashMap check
+//        System.out.println(mapWords);
 
     }
 }
