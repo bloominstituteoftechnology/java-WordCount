@@ -28,7 +28,7 @@ it appears in the text.
 
 [*] The word list is NOT case sensitive: Lambda / lambda will count as the same word.
 
-[ ] Words such as co-operation that contain a hyphen are considered one word. 
+[*] Words such as co-operation that contain a hyphen are considered one word. 
 
 [ ] A hyphen alone does not separate words. 
 
