@@ -9,7 +9,8 @@ public class Main {
 
         Words text = new Words();
         String allWords = text.getWords();
-        String cleanText = allWords.replaceAll("[[\\.\\?\\!\\,\\;\\:\\{\\}\\(\\)\\']]", "").toLowerCase();
+        System.out.println("before regexp: " + allWords);
+        String cleanText = allWords.replaceAll("[\\.\\?\\!\\,\\;\\:\\{\\}\\(\\)\\']", "");
 
         Map<String, Integer> wordHashMap = new HashMap<>();
         List<String> myList = new ArrayList<String>(Arrays.asList(cleanText.split(" ")));
