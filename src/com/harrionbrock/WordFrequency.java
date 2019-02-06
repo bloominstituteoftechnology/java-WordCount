@@ -14,7 +14,7 @@ class WordFrequency {
 
     private void cleanText() {
         this.text = this.text.toLowerCase().replaceAll("[[\\.\\?\\!\\,\\;\\:\\{\\}\\(\\)\\']]", "");
-//        return this.text;
+//        return this.text;HHash
     }
 
     private void addWordsToMap() {
@@ -25,9 +25,8 @@ class WordFrequency {
     }
 
     public void printAllWordCount() {
-        Set<Entry<String, Integer>>  hastSet = wordCount.entrySet();
-        for (Entry entry : hastSet) {
-
+        for (Entry entry : wordCount.entrySet()) {
+            System.out.println("Word: " + entry.getKey() + " | " + "Count: " + entry.getValue());
         }
     }
 
