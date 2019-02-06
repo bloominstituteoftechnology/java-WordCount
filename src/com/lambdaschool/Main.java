@@ -28,7 +28,7 @@ public class Main
     public static TreeMap<String, Integer> sortMapByValue(HashMap<String, Integer> map)
     {
         Comparator<String> comparator = new ValueComparator(map);
-        TreeMap<String, Integer> sorted = new TreeMap<String, Integer>(comparator);
+        TreeMap<String, Integer> sorted = new TreeMap<>(comparator);
         sorted.putAll(map);
         return sorted;
     }
@@ -36,7 +36,7 @@ public class Main
 
 class ValueComparator implements Comparator<String>{
 
-    HashMap<String, Integer> map = new HashMap<String, Integer>();
+    HashMap<String, Integer> map = new HashMap<>();
 
     public ValueComparator(HashMap<String, Integer> map){
         this.map.putAll(map);

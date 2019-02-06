@@ -30,7 +30,7 @@ it appears in the text.
 
 [*] Words such as co-operation that contain a hyphen are considered one word. 
 
-[ ] A hyphen alone does not separate words. 
+[*] A hyphen alone does not separate words. 
 
 [*] Numbers count as one word, so 23 is a word.
 
