@@ -1,5 +1,6 @@
 package wordCount;
 
+import java.util.*;
 import java.util.HashMap;
 
 public class Main {
@@ -19,6 +20,26 @@ public class Main {
             }
         }
         System.out.println(wordCount.get(words[1]));
+        System.out.println(wordCount.size());
+
+        ArrayList<HashMap.Entry<String, Integer>> sortedWordCount = new ArrayList<HashMap.Entry<String, Integer>>();
+        sortedWordCount.addAll(wordCount.entrySet());
+
+        Collections.sort(sortedWordCount, new Comparator<HashMap.Entry<String, Integer>>() {
+            public int compare(HashMap.Entry<String, Integer> o1, HashMap.Entry<String, Integer> o2) {
+                return (o2.getValue()).compareTo(o1.getValue());
+            }
+        });
+
+        int count = 0;
+        for (HashMap.Entry<String, Integer> wc : sortedWordCount) {
+            if (count < 50) {
+                System.out.println("key: " + wc.getKey() + " value: " + wc.getValue());
+                count++;
+            }
+
+        }
+        // System.out.println();
     }
 
 }
