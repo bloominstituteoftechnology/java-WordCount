@@ -20,7 +20,7 @@ public class Main {
         for (String word : arrayWords) {
             if (mapWords.containsKey(word)) {
                 int counter = mapWords.get(word);
-                mapWords.put(word, counter++);
+                mapWords.put(word, counter + 1);
             } else {
                 mapWords.put(word, 1);
             }
@@ -29,5 +29,8 @@ public class Main {
         // HashMap check
 //        System.out.println(mapWords);
 
+        // Sort by value
+
+        // Print top 50
     }
 }
