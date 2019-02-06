@@ -12,10 +12,10 @@ public class Main {
         String[] words = UNHRDec.split(" +");
         HashMap<String, Integer> wordCount = new HashMap<String, Integer>();
         for (String word : words) {
-            if (wordCount.containsKey(word)) {
-                wordCount.put(word, wordCount.get(word) + 1);
+            if (wordCount.containsKey(word.toLowerCase())) {
+                wordCount.put(word.toLowerCase(), wordCount.get(word.toLowerCase()) + 1);
             } else {
-                wordCount.put(word, 1);
+                wordCount.put(word.toLowerCase(), 1);
             }
         }
 
