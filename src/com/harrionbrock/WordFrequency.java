@@ -31,7 +31,7 @@ class WordFrequency {
         }
     }
 
-    public void printTo50Words() {
+    public void printTop50Words() {
         List<Entry<String, Integer>> tempMap = sortByValue(wordCount);
         int index = 0;
 
