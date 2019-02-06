@@ -2,8 +2,7 @@ package com.lambdaschool;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -25,6 +24,22 @@ public class Main {
                 wordCountHashMap.put(word, count + 1);
             }
         }
-        System.out.println("loop compiled successfully");
+//        System.out.println("loop compiled successfully");
+        ArrayList<HashMap.Entry<String, Integer>> sortedMap =
+                new ArrayList<>();
+        sortedMap.addAll(wordCountHashMap.entrySet());
+
+        Collections.sort(sortedMap, new Comparator<HashMap.Entry<String, Integer>>() {
+            public int compare(HashMap.Entry<String, Integer> o1, HashMap.Entry<String, Integer> o2) {
+                return o2.getValue() - o1.getValue();
+            }
+        });
+
+        System.out.println("\t\t   Word\t\tValue");
+        for (int i = 0; i < 50; i++) {
+            System.out.printf("\n%15s %8d", sortedMap.get(i).getKey(),
+                    sortedMap.get(i).getValue());
+        }
     }
+
 }
