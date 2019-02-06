@@ -19,8 +19,6 @@ public class Main {
                 wordCount.put(word, 1);
             }
         }
-        System.out.println(wordCount.get(words[1]));
-        System.out.println(wordCount.size());
 
         ArrayList<HashMap.Entry<String, Integer>> sortedWordCount = new ArrayList<HashMap.Entry<String, Integer>>();
         sortedWordCount.addAll(wordCount.entrySet());
@@ -34,12 +32,11 @@ public class Main {
         int count = 0;
         for (HashMap.Entry<String, Integer> wc : sortedWordCount) {
             if (count < 50) {
-                System.out.println("key: " + wc.getKey() + " value: " + wc.getValue());
+                System.out.println("The word \"" + wc.getKey() + "\" occurs " + wc.getValue() + " times");
                 count++;
             }
 
         }
-        // System.out.println();
     }
 
 }
