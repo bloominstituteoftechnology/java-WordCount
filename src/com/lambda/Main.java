@@ -36,9 +36,9 @@ public class Main {
         });
 
         // Print out the list of top 50 words:
-        
-        System.out.println(sortedCount);
-
-
+        System.out.println("The top 50 most recurring words are: ");
+        for (int i = 0; i < 50; i++) {
+            System.out.println(sortedCount.get(i).getKey() + ": " + sortedCount.get(i).getValue());
+        }
     }
 }
