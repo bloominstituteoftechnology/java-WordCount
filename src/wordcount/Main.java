@@ -47,6 +47,7 @@ public class Main
 
         
         //collections Framework provides a common interface between grouped objects in Java
+        //sort descending
         Collections.sort(sortedWords, new Comparator<Map.Entry<String,Integer>>()
         {
             public int compare(HashMap.Entry<String,Integer>o1,HashMap.Entry<String,Integer>o2)
@@ -55,12 +56,40 @@ public class Main
             }
         });
 
+        
+
+        //print out top 50
+
         for (int i=0;i<50;i++ )
         {
-            System.out.println(i+". " + sortedWords.get(i));
+            System.out.println("TOP 50 "+i+". " + sortedWords.get(i));
         }
         //System.out.println("Sorted Word Frequency " +Arrays.toString(sortedWords.toArray()));
+
+
+
+
+
+        ArrayList<HashMap.Entry<String, Integer>> alphabetical = new ArrayList<HashMap.Entry<String, Integer>>(sortedWords.subList(0,49));
+
+        Collections.sort(alphabetical, new Comparator<Map.Entry<String,Integer>>()
+        {
+            public int compare(HashMap.Entry<String,Integer>a1,HashMap.Entry<String,Integer>a2)
+            {
+                return a1.getKey().compareTo(a2.getKey());
+            }
+        });
+
+        
+
+        for (int i=0;i < alphabetical.size();i++ )
+        {
+            System.out.println("ALPH TOP 50: " + alphabetical.get(i));
+        }
     }
+
+
+    
 }
 
 
