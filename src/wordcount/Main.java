@@ -19,7 +19,7 @@ public class Main
         HashMap<String, Integer> wordsHashmap = new HashMap<String, Integer>();
 
 
-        //arraylist to hashmap
+        //array to hashmap
         
         for (String w: words)
         {
@@ -46,7 +46,7 @@ public class Main
         sortedWords.addAll(wordsHashmap.entrySet());
 
         
-
+        //collections Framework provides a common interface between grouped objects in Java
         Collections.sort(sortedWords, new Comparator<Map.Entry<String,Integer>>()
         {
             public int compare(HashMap.Entry<String,Integer>o1,HashMap.Entry<String,Integer>o2)
