@@ -84,7 +84,7 @@ public class Main
 
         for (int i=0;i < alphabetical.size();i++ )
         {
-            System.out.println("ALPH TOP 50: " + alphabetical.get(i));
+            System.out.println("ALPH TOP 50:" + alphabetical.get(i));
         }
     }
 
