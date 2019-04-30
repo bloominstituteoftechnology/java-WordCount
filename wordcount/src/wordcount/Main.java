@@ -17,7 +17,11 @@ public class Main
         for (String word: words)
         {
             Integer counter = wordCount.get(word);
+            if (counter == null) {
+                wordCount.put(word, 1);
+            } else {
             wordCount.put(word, counter + 1);
+            }
         }
 
        System.out.println(wordCount);
