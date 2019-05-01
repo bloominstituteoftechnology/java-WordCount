@@ -1,5 +1,11 @@
 package wordcount;
-import java.util.*;
+import java.util.ArrayList; 
+import java.util.Collections; 
+import java.util.HashMap; 
+import java.util.Map.Entry; 
+import java.util.Set; 
+import java.util.Comparator;
+
 
 public class Main
 {
@@ -24,9 +30,24 @@ public class Main
             }
         }
 
-       System.out.println(wordCount);
+        System.out.println(wordCount);
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println("Number of unique words: " + wordCount.size());
+                        
+        //Getting Set of entries from HashMap 
+                        
+        Set<Entry<String, Integer>> entrySet = wordCount.entrySet(); 
+                        
+        //Creating an ArrayList of Entry objects 
+                        
+        ArrayList<Entry<String, Integer>> wordArrayList = new ArrayList<Entry<String, Integer>>(entrySet);
 
-
-
+        Collections.sort(wordArrayList, new Comparator<Entry<String, Integer>>() {
+            public int compare (Entry<String, Integer> word1, Entry<String, Integer> word2) {
+               return word2.getValue().compareTo(word1.getValue());
+                
+            }
+        });
+        System.out.println(wordArrayList);
     }
 }
