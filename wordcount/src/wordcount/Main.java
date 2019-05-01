@@ -29,8 +29,8 @@ public class Main
             wordCount.put(word, counter + 1);
             }
         }
-
-        System.out.println(wordCount);
+       
+        //System.out.println(wordCount);
         System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println("Number of unique words: " + wordCount.size());
                         
@@ -48,6 +48,12 @@ public class Main
                 
             }
         });
-        System.out.println(wordArrayList);
+         //System.out.println(wordArrayList);
+         //Print top 50 words by Frequency (descending) post sort
+
+        System.out.println("\n=== Iterate using for loop with index ===");
+        for(int i = 0; i < 50; i++) {
+            System.out.println(wordArrayList.get(i));
+        }
     }
 }
