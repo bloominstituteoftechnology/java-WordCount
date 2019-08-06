@@ -10,7 +10,32 @@ public class Main {
 
         String[] words = unStr.split(" +");
 
+        // Instantiate new HashMap object taking a String as key and Integer as value
+        // named wordCount
         HashMap<String, Integer> wordCount = new HashMap<>();
+
+        // Check each word of type String in the words array
+        for (String word : words) {
+            // If statement checks HashMap type object named wordCount to see if it contains
+            // the key of type String corresponding to each word in the for loop, looping
+            // over the words array.
+            // If the key of the key-value pair for each item in
+            // the wordCount array matches the word item in the
+            // words array, put the word string as the key
+            // in the key - value pair to the wordCount HashMap,
+            // and as the value, get the current value associated
+            // with that key and increase by 1
+            // If that key is not found, then put that word
+            // into the wordCoun HashMap and give it a value of 1
+
+            if (wordCount.containsKey(word)) {
+                wordCount.put(word, wordCount.get(word) + 1);
+            } else {
+                wordCount.put(word, 1);
+            }
+        }
+
+        System.out.println(wordCount);
 
     }
 
