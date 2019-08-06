@@ -37,6 +37,18 @@ public class Main {
 
         System.out.println(wordCount);
 
+        // Create an ArrayList named sortedWords, the type will be the same type as each
+        // item in the HashMap, which we get by accessing the entry
+
+        ArrayList<HashMap.Entry<String, Integer>> sortedWords = new ArrayList<>();
+
+        // Add all of the entry key-value pairs from the wordCount HashMap to the
+        // sortedWords ArrayList using the entrySet() method on the HashMap
+
+        sortedWords.addAll(wordCount.entrySet());
+
+        System.out.println(sortedWords);
+
     }
 
 }
