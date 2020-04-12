@@ -10,7 +10,7 @@ A student that completes this project shows that they can:
 
 ## Introduction
 
-Reading in some text and counting word appearances is a very common Java interview question. So, let's practice that!
+Reading in some text and counting word frequencies is a very common Java interview question. So, let's practice that!
 
 ## Instructions
 
@@ -20,9 +20,8 @@ Below, the ***United Nation’s Declaration of Human Rights*** is provided as a 
 
 * [ ] Set the above to be a String in Java, so something like `String unText = "...";`
 
-From this string, make a HashMap of each unique word and the frequency it appears in the text. 
-
-* [ ] A word is delimited by a space or punctuation mark(s).
+* [ ] From this string, make a HashMap of each unique word and the frequency it appears in the text.
+  * A word is delimited by a space or punctuation mark(s).
   * The spaces and punctuation marks do NOT appear in the word list.
   * The word list is NOT case sensitive: Lambda / lambda will count as the same word.
   * Words such as co-operation that contain a hyphen are considered one word.
@@ -103,7 +102,7 @@ Common Word <AGAINST> occurs 6 times
 
 ## Stretch Goals
 
-* [ ] Print to the console the top 50 appearing words alphabetically. Do include their counts. 
+* [ ] Print to the console the top 50 appearing words alphabetically. Do include their counts.
 
 Output should be something like
 
