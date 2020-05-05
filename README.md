@@ -5,7 +5,7 @@ A student that completes this project shows that they can:
 * Craft and use for loops
 * Craft and use Java conditionals, branching, including if-then, if-then-else, and switch statements
 * Craft and manipulate Collections
-* Craft and manipulate ArraysList Collections
+* Craft and manipulate ArrayList Collections
 * Craft and manipulate HashMap Collections
 
 ## Introduction
@@ -35,7 +35,7 @@ Below, the ***United Nation’s Declaration of Human Rights*** is provided as a 
 
 Note:
 
-Below are two snippets of code you might find useful for this afternoon. Of course if you do not find them useful please ignore. You are NOT required to use this code.
+Below are two snippets of code you might find useful for this afternoon. If you do not find them useful please ignore. You are NOT required to use this code.
 
 ```JAVA
 // remove all remaining punctuation from the string
