@@ -51,15 +51,17 @@ public class wordcounter {
                 insert(valueToAdd, topFiftyInt, word, topFiftyString);
             }
             
-            if (topFiftyInt.size() > 50)
+            if (topFiftyInt.size() > 51)
             {
                 topFiftyInt.remove(0);
                 topFiftyString.remove(0);
             }
         }
-        // System.out.println("1: " + wordCount.get("1").get());
-        System.out.println("array top50: " + topFiftyString.toString());
-        System.out.println("top counts: " + topFiftyInt.toString());
+
+        // print off each word with it's count
+        for (int i = 0; i < topFiftyInt.size() -1;i++) {
+            System.out.println("Common Word <" + topFiftyString.get(i) + "> occurs " + topFiftyInt.get(i) + " times");
+        }
     }
 
     // Method to insert words and their counts into their respectie lists
